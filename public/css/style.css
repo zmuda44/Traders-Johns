@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*page background color*/
+body {
+    background-color: rgb(204, 204, 204);
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.container {
+    color: black;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container button {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    width: 110px;
+    margin: 2px;
+}
+
+/* Begin header section */
+
+header {
+    color: white;
+    background-image: linear-gradient( rgb(241, 200, 200),lightcoral );
+    margin: 20px 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 20px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+    position: relative;
+}
+
+.branding-container {
+    display: flex;
+    gap: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header button {
+    height: 40px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+/* Begin main section */
+
+main {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+
+
+.container input {
+    display: flex;
+    justify-content: center;
+}
+
+main .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.homepage-main {
+    display: flex;
+}
+
+/* Begin aside */
+
+.homepage-main .categories {
+    display: block;
+    width: 25%;
+}
+
+/* Begin homepage main content */
+.main-homepage-content {
+    width: 75%;
+}
+
+.convert {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-right: 5px;
+    align-items: center;
+}
+
+
+/* Card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    color: black;
+    background-color: rgb(231, 255, 255);
+    width: 200px;
+    margin: 5px;
+    border: solid;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 2px 0;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+/* Set max size for images */
+.card img {
+    width: 100px;
+    height: 80px;
+}
+
+/* Login and Sign up forms */
+
+.login-signup-section {
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+#product-elseprice {
+    font-style: normal;
+}
+
+/* Create new product form */
+.create-new-product {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid;
+    margin: 50px 0px;
+}
+
+#new-product {
+    display: block;
+
+}
+
+.form-section {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    margin: 5px 5px;
+    align-items: stretch;
+}
+
+.product-create-btn {
+    width: 98%;
+}
+
+.categories button img {
+    width: 105px;
+    height: 70px;
+}
+
+
+/* Mobile menus */
+
+@media screen and (max-width: 1000px) {
+    .hamburger-menu  {
+        display: block;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        height: 5px;
+        width: 30px;
+        background-color: black;
+        margin-top: 2px;
+    }
+
+    .header-btn-container {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: rgb(231, 255, 255);
+        border: solid;
+        height: 100px;
+        padding: 0 10px;
+    }
+
+    .header-btn-container.active {
+        display: flex;
+        align-items: center;
+    }
+
+    header button {
+        display: block;
+    }  
+    
+    .branding-container {
+        display: block;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(65%) rotate(45deg);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+        display: none;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-65%) rotate(-45deg);
+    }
+}

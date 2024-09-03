@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/ui.css">
+  <link rel="stylesheet" href="/css/checkout.css">
+  <link rel="stylesheet" href="/css/profile.css">
+
+  <title>Traders Johns' Organic Food Marketplace</title>
+</head>
+
+<body>
+
+  
+
+  {{!-- Begin header section --}}
+  <header>
+    <div class="container title-container">
+      <div class="branding-container">
+        <a href="/"><h2>Welcome to Trader Johns'!</h2></a>
+        <h3>the ebay of organic foods!</h3>
+      </div>
+
+      <div class="header-btn-container">
+        {{#if logged_in}}
+        <a href="/profile">
+          <button class="homepage-btn">Profile</button>
+        </a> 
+        <button class="logout-btn">Logout</button>
+        {{else}}
+        <a href="/login" class="login-signup">
+          <button class="homepage-btn">Login or Sign-up</button>
+        </a>
+        {{/if}}
+      </div>
+
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+
+  </header>
+
+  {{!-- Begin main section --}}
+  <main>
+    <div class="container">{{{ body }}}</div>
+  </main>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+<script src="/js/hamburger.js"></script>
+</body>
+
+</html>

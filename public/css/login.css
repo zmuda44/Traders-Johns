@@ -1,0 +1,25 @@
+
+/* Login and Sign up forms */
+
+.login-signup-section {
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.signup,
+.login{
+    width: 40vw;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    align-items: center;
+    background-image: linear-gradient( rgb(241, 200, 200),lightcoral );
+
+}
+.form{
+    width: 98%;
+}
+

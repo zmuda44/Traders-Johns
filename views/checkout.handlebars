@@ -1,0 +1,41 @@
+<div class="checkout-container">{{!-- Show current products as cards. If logged in, show prices, otherwise do not show prices. --}}  
+  <div class="item-section">
+    <div class="card">
+      {{!-- <p class="product-id" value="{{id}}">Product id: {{id}}</p>      --}}
+      {{#if user}}
+      <p class="seller">{{user.username}}</p>
+      {{else}}
+      <p class="seller">Item sold by Traders Johns'</p>      
+      {{/if}}
+      <h3 class="product-name">{{product_name}}</h3>     
+      <p class="product-description">{{description}}</p>
+        
+      <p class="product-price">$ {{price}} </p>     
+      <p class="product-category">{{category.category_name}}</p>  
+    </div>  
+  </div>
+
+  <div class="checkout-section">
+    <div class="credit-card-info">
+      <label for="cc-name">Credit card name</label>
+      <input type="text" id="cc-name">
+
+      <label for="cc-name">Credit card number</label>
+      <input type="text" id="cc-number">
+
+      <label for="cc-name">Credit card billing</label>
+      <input type="text" id="cc-billing">
+
+      <button id="credit-card-btn">Buy now</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/checkout.js"></script>
+
+
+
+
+
+
+
