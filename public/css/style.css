@@ -7,8 +7,7 @@
 /*page background color*/
 body {
     background-color: rgb(204, 204, 204);
-    font-style: oblique;
-    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: Arial, 'Arial', Arial, sans-serif
 }
 
 .container {
@@ -29,7 +28,6 @@ body {
 
 header {
     color: white;
-    background-image: linear-gradient( rgb(241, 200, 200),lightcoral );
     margin: 20px 0;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -44,9 +42,8 @@ header .container {
     position: relative;
 }
 
-.branding-container {
-    display: flex;
-    gap: 10px;
+.branding-container span {
+    color: red;
 }
 
 header a {
@@ -88,9 +85,15 @@ main .container {
 /* Begin aside */
 
 .homepage-main .categories {
-    display: block;
-    width: 25%;
+
 }
+
+.homepage-main .categories button {
+    display: block;
+    margin-top: 5px;
+}
+
+
 
 /* Begin homepage main content */
 .main-homepage-content {

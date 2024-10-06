@@ -2,39 +2,39 @@
 
 {{!-- Buttons to show categories --}}
   <aside class="categories">
-    <h2>Current Products</h2>
+    <h2>Categories</h2>
     <button class="category-names" value="1">
-      <img src="/images/Produce.jpg">Produce
+    Produce
     </button>
     <button class="category-names" value="2">
-      <img src="/images/Meat.jpg">Meat
+      Meat
     </button>
     <button class="category-names" value="3">
-      <img src="/images/Seafood.jpg">Seafood
+      Seafood
     </button>
     <button class="category-names" value="4">
-      <img src="/images/Dairy.jpg">Dairy
+      Dairy
     </button>
     <button class="category-names" value="5">
-      <img src="/images/Snacks.jpg">Snacks
+      Snacks
     </button>
     <button class="category-names" value="6">
-      <img src="/images/Dry-Goods.jpg">Dry-Goods
+      Dry-Goods
     </button>
     <button class="category-names" value="7">
-      <img src="/images/Canned-Goods.jpg">Canned-Goods
+      Canned-Goods
     </button>
     <button class="category-names" value="8">
-      <img src="/images/Condiments.jpg">Condiments
+      Condiments
     </button>
     <button class="category-names" value="9">
-      <img src="/images/Bakery.jpg">Bakery
+      Bakery
     </button>
     <button class="category-names" value="10">
-      <img src="/images/Cereal.jpg">Cereal
+      Cereal
     </button>
     <button class="category-names" value="11">
-      <img src="/images/Frozen-Goods.jpg">Frozen-Goods
+      Frozen-Goods
     </button>
   </aside>
 
@@ -47,17 +47,45 @@
       <a href="/euros"><button id="convert-currency">€</button></a>
     </div>
 
-    <div class="card-container">
-      {{#each products as |product|}}
-      <div class="card" value="{{id}}">
-        <h3 class="product-name">{{product_name}}</h3>
-        <p class="product-description">{{description}}</p>
-        <p class="product-price">$ {{price}} </p>
-        <p class="product-category">{{category.category_name}}</p>
-        {{!-- Thsi will search for each image by name --}}
-        <img src="/images/{{category.category_name}}.jpg">
+    <div id="watched-items"></div>
+    <h3>Currently Watched Items</h3>
+      <div class="card-container">
+        {{#each products as |product|}}
+        <div class="card" value="{{id}}">
+          <h3 class="product-name">{{product_name}}</h3>
+          <p class="product-description">{{description}}</p>
+          <p class="product-price">$ {{price}} </p>
+          <p class="product-category">{{category.category_name}}</p>
+          {{!-- Thsi will search for each image by name --}}
+          <img src="/images/{{category.category_name}}.jpg">
+        </div>
+        {{/each}}
       </div>
-      {{/each}}
+    <div class="category-items">
+      <h3>Chosen Category Items</h3>
+            {{#each products as |product|}}
+        <div class="card" value="{{id}}">
+          <h3 class="product-name">{{product_name}}</h3>
+          <p class="product-description">{{description}}</p>
+          <p class="product-price">$ {{price}} </p>
+          <p class="product-category">{{category.category_name}}</p>
+          {{!-- Thsi will search for each image by name --}}
+          <img src="/images/{{category.category_name}}.jpg">
+        </div>
+        {{/each}}
+    </div>
+    <div class="popular-items">
+      <h3>Popular Items</h3>
+            {{#each products as |product|}}
+        <div class="card" value="{{id}}">
+          <h3 class="product-name">{{product_name}}</h3>
+          <p class="product-description">{{description}}</p>
+          <p class="product-price">$ {{price}} </p>
+          <p class="product-category">{{category.category_name}}</p>
+          {{!-- Thsi will search for each image by name --}}
+          <img src="/images/{{category.category_name}}.jpg">
+        </div>
+        {{/each}}
     </div>
   </div>
   

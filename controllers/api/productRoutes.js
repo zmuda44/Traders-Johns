@@ -6,11 +6,12 @@ const { Product, User, Category } = require('../../models');
 // router.post('/', withAuth, async (req, res) => {
 
 router.post('/', async (req, res) => {
+  console.log(req.body)
   try {
-      const newProduct = await Product.create({...req.body, user_id:req.session.user_id});
-      console.log(newProduct)
+      const newProduct = await Product.create({ ...req.body });
+    
   
-      res.status(200).json("hello");
+      res.status(200).json(newProduct);
     } catch (err) {
       res.status(400).json(err);
     }

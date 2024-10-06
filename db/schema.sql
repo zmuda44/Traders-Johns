@@ -1,5 +1,5 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS trader_jons;
+DROP DATABASE IF EXISTS trader_johns_db;
 
 -- CREATE DATABASE
-CREATE DATABASE trader_jons;
+CREATE DATABASE trader_johns_db;

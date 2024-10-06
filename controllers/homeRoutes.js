@@ -15,9 +15,15 @@ router.get('/', async (req, res) => {
         });
 
         const products = productData.map((product) => product.get({ plain: true }));
-         
+        
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Product }],
+          });
 
-        res.render('homepage', { products, logged_in: req.session.logged_in });
+        const user = userData.get({ plain: true });
+
+        res.render('homepage', { user, products, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }

@@ -22,19 +22,16 @@
     <div class="container title-container">
       <div class="branding-container">
         <a href="/"><h2>Welcome to Trader Johns'!</h2></a>
-        <h3>the ebay of organic foods!</h3>
+        <h3>the <span>e</span><span>b</span><span>a</span><span>y</span> of organic foods</h3>
       </div>
 
-      <div class="header-btn-container">
+      <div class="header-link-container">
         {{#if logged_in}}
-        <a href="/profile">
-          <button class="homepage-btn">Profile</button>
-        </a> 
-        <button class="logout-btn">Logout</button>
+        <h4>Welcome {{user.username}}</h4>
+        <a href="/profile" class="homepage-link">Profile</a> 
+        <a class="logout-link">Logout</a>
         {{else}}
-        <a href="/login" class="login-signup">
-          <button class="homepage-btn">Login or Sign-up</button>
-        </a>
+        <a href="/login" class="login-signup">Login or Signup here to begin buying and selling</a>
         {{/if}}
       </div>
 
