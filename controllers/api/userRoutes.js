@@ -10,8 +10,8 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
-      res.status(204).end();
+      //see where this number is returned
+      res.status(201).end();
     });
   } catch (error) {
     console.error('Failed to create new user', error);

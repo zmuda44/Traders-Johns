@@ -42,10 +42,10 @@
 {{!-- Product cards of all products currently available --}}
 {{!-- Button to convert dollars to euros --}}
   <div class="main-homepage-content">
-    <div class="convert">
+    {{!-- <div class="convert">
       <p>Click to show price in euros</p>
       <a href="/euros"><button id="convert-currency">€</button></a>
-    </div>
+    </div> --}}
 
     <div id="watched-items"></div>
     <h3>Currently Watched Items</h3>
@@ -60,34 +60,24 @@
           <img src="/images/{{category.category_name}}.jpg">
         </div>
         {{/each}}
+
+
       </div>
     <div class="category-items">
       <h3>Chosen Category Items</h3>
-            {{#each products as |product|}}
-        <div class="card" value="{{id}}">
-          <h3 class="product-name">{{product_name}}</h3>
-          <p class="product-description">{{description}}</p>
-          <p class="product-price">$ {{price}} </p>
-          <p class="product-category">{{category.category_name}}</p>
-          {{!-- Thsi will search for each image by name --}}
-          <img src="/images/{{category.category_name}}.jpg">
-        </div>
-        {{/each}}
+
     </div>
     <div class="popular-items">
       <h3>Popular Items</h3>
-            {{#each products as |product|}}
-        <div class="card" value="{{id}}">
-          <h3 class="product-name">{{product_name}}</h3>
-          <p class="product-description">{{description}}</p>
-          <p class="product-price">$ {{price}} </p>
-          <p class="product-category">{{category.category_name}}</p>
-          {{!-- Thsi will search for each image by name --}}
-          <img src="/images/{{category.category_name}}.jpg">
-        </div>
-        {{/each}}
+
     </div>
   </div>
+
+ <div>something</di>
   
 </div>
 <script src="/js/homepage.js"></script>
+
+
+
+

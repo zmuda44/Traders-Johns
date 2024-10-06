@@ -10,6 +10,9 @@ const { Product, User, Category, WatchedProduct, PurchasedProduct } = require('.
 router.post('/', async (req, res) => {
 
   try {
+    if (!req.body) {
+      return res.json("error")
+    }
       const newProduct = await Product.create({ ...req.body });
     
   
@@ -23,6 +26,7 @@ router.post('/', async (req, res) => {
 //Get route for when button is pressed on hompage, only show that category on this page
 router.get('/:category_id', async (req,res) => {
   try {
+    console.log("new route hit")
       let products = await Product.findAll({ where: {category_id: req.params.category_id}, 
         include: [{ 
           model: Category,
@@ -33,7 +37,7 @@ router.get('/:category_id', async (req,res) => {
       console.log(products);
       res.render('homepage', { products })
   } catch (error){
-      res.status(500).json(err);
+      res.status(500).json(error);
   }
 })
 
@@ -62,8 +66,8 @@ router.post('/:product_id/watched', async (req, res) => {
 
     res.send(watchedProduct)
 
-  } catch {
-    console.error('Error adding product to watched products:', error);
+  } catch(error) {
+    console.error(error);
 
   }
 })
@@ -91,7 +95,7 @@ router.post('/:product_id/purchased', async (req, res) => {
     //Why does this not console.log this?
     console.log(`Product (ID: ${productId}) has been added to User (ID: ${userId})'s purchased products.`);
 
-    res.send(PurchasedProduct)
+    res.send(purchasedProduct)
 
   } catch {
     console.error('Error adding product to watched products:', error);

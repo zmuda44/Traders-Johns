@@ -2,8 +2,6 @@ const router = require('express').Router();
 const { Product, User, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
-
-
 //Get route to homepage
 router.get('/', async (req, res) => {
     try {
@@ -15,15 +13,23 @@ router.get('/', async (req, res) => {
         });
 
         const products = productData.map((product) => product.get({ plain: true }));
-        
+       
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Product }],
+            // include: [{ model: Product }],
           });
+
+          
 
         const user = userData.get({ plain: true });
 
-        res.render('homepage', { user, products, logged_in: req.session.logged_in });
+       console.log(user)
+      
+
+
+        // res.render('homepage', { user, products, logged_in: req.session.logged_in });
+        res.render('homepage', { userData, products });
+
     } catch (err) {
         res.status(500).json(err);
     }

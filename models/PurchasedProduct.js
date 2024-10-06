@@ -14,17 +14,17 @@ PurchasedProduct.init(
     
     user_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: 'user',
-      //   key: 'id',
-      // }
+      references: {
+        model: 'user',
+        key: 'id',
+      }
     },
     product_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: 'product',
-      //   key: 'id',
-      // }
+      references: {
+        model: 'product',
+        key: 'id',
+      }
     }
   },
   {

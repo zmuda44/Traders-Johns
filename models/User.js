@@ -61,17 +61,3 @@ module.exports= User;
 
 
 
-// products_watched: {
-//   type: DataTypes.INTEGER,
-//   references: {
-//     model: 'product',
-//     key: 'id',
-//   }
-// },
-// products_purchased: {
-//   type: DataTypes.INTEGER,
-//   references: {
-//     model: 'product',
-//     key: 'id',
-//   }
-// }
